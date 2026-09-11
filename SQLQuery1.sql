@@ -8,7 +8,7 @@ IF OBJECT_ID('Profesores') IS NOT NULL
 
 CREATE TABLE Profesores(
 	Id int,
-	Nombre nvarchar(50),
+	Nombre nvarchar(50) NOT NULL, /*PREVENT NOT NULL VALUES, DEFAULTS TO NULL ALLOWANCE*/
 	Telefono int,
 	primary key(Id)
 );
