@@ -38,7 +38,4 @@ truncate table Productos /*unlike delete from table, empties any persisting data
 
 select * from Productos
 
-
-
 /*PLACEHOLDER*/
-
