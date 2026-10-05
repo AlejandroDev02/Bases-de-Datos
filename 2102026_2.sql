@@ -26,5 +26,17 @@ INSERT INTO Propietarios(Id_propietario, Nombre) VALUES
 (001, 'Alfredo'),
 (002, 'Roberto');
 
+ALTER TABLE Mascotas
+	ADD CONSTRAINT fk_Mascotas_Propietarios /*constraint will prevent the FK holder to be dropped because there's a dependency*/
+		FOREIGN KEY (Id_propietario) REFERENCES Propietarios(Id_propietario) /*Sets a table property as a foreign key referenced in its table of origin*/
+			ON UPDATE CASCADE /*CASCADE = operate on both relatd tables*/
+			ON DELETE CASCADE;
 
+INSERT INTO Mascotas (Nombre, raza, Peso, Id_propietario) VALUES
+(default, 'negrito', default, 001);
 
+SELECT * FROM Mascotas;
+
+INSERT INTO Mascotas DEFAULT VALUES;
+
+SELECT * FROM Mascotas;
