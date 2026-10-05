@@ -35,3 +35,26 @@ VALUES
 (18, 'Chocolate', 16, 6500, 'Dulces', 'Dulces y Snacks', 'Nacional de Chocolates'),
 (19, 'Detergente', 14, 13500, 'Limpieza', 'Aseo', 'Familia'),
 (20, 'Jabon Liquido', 10, 9800, 'Limpieza', 'Aseo', 'Familia');
+
+SELECT COUNT(*)
+    FROM Productos
+    WHERE seccion = 'Lacteos'
+
+SELECT distribuidor, count(*)
+    FROM Productos
+    GROUP BY distribuidor
+
+SELECT categoria, seccion, sum(Cantidad)
+    FROM Productos
+    GROUP BY categoria, seccion
+
+SELECT seccion,
+    MIN(precio) as 'Minimo',
+    MAX(precio) as 'Maximo'
+    FROM Productos
+    GROUP BY seccion
+
+SELECT categoria, AVG(precio) as 'Promedio'
+    FROM Productos
+    GROUP BY categoria
+

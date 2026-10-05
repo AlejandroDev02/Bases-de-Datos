@@ -61,3 +61,23 @@ FROM Libros;
 SELECT MIN(Precio)
 	FROM Libros
 	WHERE Nombre LIKE 'EL%';
+
+SELECT Editorial, COUNT(*) /*select all values from this field*/
+	FROM Libros
+	GROUP BY Editorial; /*Displays the counted rows gruped by repeated values from the specified fields (we can group by multiple fields separated by comma)*/
+
+SELECT Editorial, Autor, SUM(Precio)
+	FROM Libros
+	GROUP BY Editorial, Autor;
+
+SELECT Editorial, /*WE CAN ADD MULTIPLE AGGERGATE FUNCTIONS*/
+	MAX(Precio) as 'Mayor',
+	MIN(Precio) as 'Menor'
+	FROM Libros
+	GROUP BY Editorial;
+
+SELECT Editorial, COUNT(*)
+	FROM Libros
+	WHERE Precio <= 30000
+	GROUP BY ALL Editorial /*Display all even if they do not meet the condition, they will still display as 0*/
+	
