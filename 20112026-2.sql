@@ -35,6 +35,6 @@ AS
     END;
 GO
 
-DECLARE @ProcedimientoLol decimal(10, 2);
-EXEC dbo.sp_PromedioPorSeccion 'Lacteos', @ProcedimientoLol OUTPUT
-SELECT @ProcedimientoLol AS 'Promedio Producto';
+DECLARE @ProcedimientoLol decimal(10, 2); /*CREATE VARIABLE*/ /*FREE-CHOICE NAME*/
+EXEC dbo.sp_PromedioPorSeccion 'Lacteos', @ProcedimientoLol OUTPUT /*FILL VARIABLE*/
+SELECT @ProcedimientoLol AS 'Promedio Producto'; /*DISPLAY VARIABLE*/
